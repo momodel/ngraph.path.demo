@@ -23,7 +23,7 @@ const bus = require('./bus');
 
 // First of all, read what we currently have in the query string.
 const qs = queryState({
-  graph: 'amsterdam-roads'
+  graph: 'hangzhou-roads'
 });
 
 qs.onChange(updateStateFromQueryString);

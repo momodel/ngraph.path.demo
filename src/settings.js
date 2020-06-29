@@ -12,30 +12,41 @@ function getSettings(qs) {
 
 
 function getAvailableGraphs(qs) {
-  let graphs = [{
+  let graphs = [
+  {
+    value: 'hangzhou-roads',
+    name: '杭州 (7.6 MB)'
+  }, 
+  {
     value: 'amsterdam-roads',
-    name: 'Amsterdam (76K edges, 1.1 MB)'
-  }, {
+    name: '阿姆斯特丹 (1.1 MB)'
+  }, 
+  {
     value: 'seattle-roads',
-    name: 'Seattle (173K edges, 2.4 MB)'
-  }, {
+    name: '西雅图 (2.4 MB)'
+  }, 
+  {
     value: 'rome-roads',
-    name: 'Rome (258K edges, 3.8 MB)'
-  }, {
+    name: '罗马 (3.8 MB)'
+  }, 
+  {
     value: 'delhi-roads',
-    name: 'Delhi (280K edges, 3.9 MB)'
-  }, {
+    name: '新德里 (3.9 MB)'
+  }, 
+  {
     value: 'moscow-roads',
-    name: 'Moscow (451K edges, 6.5 MB)'
-  }, {
-    value: 'USA-road-d.NY',
-    name: 'New York (730K edges, 7.6 MB)'
-  },
+    name: '莫斯科 (6.5 MB)'
+  }, 
+  // static文件夹里没有纽约的地图文件
+  // { 
+  //   value: 'USA-road-d.NY',
+  //   name: 'New York (730K edges, 7.6 MB)'
+  // },
   // Commenting this out, as on mobile devices it may crash the browser.
-  //  {
-  //   value: 'tokyo-roads',
-  //   name: 'Tokyo (879K edges, 12.3 MB)'
-  // }
+   {
+    value: 'tokyo-roads',
+    name: '东京 (12.3 MB)'
+  }
 ];
 
   return {

@@ -42,15 +42,15 @@
               <path d='M372,28 L388,28 380.5,15z' stroke-width='0' stroke='white' fill="hsl(215, 34%, 64%)" v-if='detailsVisible'></path>
             </g>
           </svg>
-          <a href='#' @click.prevent='clearRoute' class='reset'>clear</a>
+          <a href='#' @click.prevent='clearRoute' class='reset'>重置AB</a>
         </div>
         <div v-if='detailsVisible && !helpVisible' class='details'>
           <div class='row'>
-            <div class='label'>Path length:</div>
+            <div class='label'>路径长度:</div>
             <div class='col'>{{stats.pathLength}}</div>
           </div>
           <div class='row'>
-            <div class='label'>Path finder:</div>
+            <div class='label'>搜索算法:</div>
             <select class='col' v-model='pathFinder.selected' @change='updateSearchAlgorithm'>
               <option v-for='algorithm in pathFinder.algorithms' :value='algorithm.value'>{{algorithm.name}}</option>
             </select>
@@ -63,10 +63,12 @@
           </select>
       </div>
     </div>
+    
     <div class='about-line'>
       <a class='about-link' href='#' @click.prevent='aboutVisible = true'>about...</a>
       <a class='bold' href='http://github.com/anvaka/ngraph.path'>source code</a>
     </div>
+    
     <div class='osm-note' v-if='!progress.visible && graphSettings.selected !== "USA-road-d.NY"'>
       Graph was extracted from <a href='https://www.openstreetmap.org' target='_blank'>www.openstreetmap.org</a>.
       It is made available under <a href='https://opendatacommons.org/licenses/odbl/summary/' target='_blank'>ODbL</a>
@@ -134,7 +136,7 @@ export default {
       if (this.pathInfo.noPath) {
         return 'No path (' + this.stats.lastSearchTook + ')';
       }
-      return 'Found in: ' + this.stats.lastSearchTook;
+      return '搜索时间: ' + this.stats.lastSearchTook;
     }
   },
 
